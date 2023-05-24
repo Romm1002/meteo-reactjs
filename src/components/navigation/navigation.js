@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/img/logo.png";
+import SearchForm from "../searchForm";
 
 const Navigation = () => {
   return (
     <nav>
       <div className="container">
-        <Link to="/">{/* <img src={logo} width="200px" alt="" /> */}</Link>
+        <SearchForm />
       </div>
     </nav>
   );

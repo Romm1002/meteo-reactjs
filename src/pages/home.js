@@ -4,7 +4,7 @@ import WeatherDisplay from "../components/weatherDisplay";
 const Home = () => {
   return (
     <>
-      <SearchForm />
+      {/* <SearchForm /> */}
       <WeatherDisplay />
     </>
   );
