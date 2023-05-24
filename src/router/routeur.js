@@ -10,8 +10,7 @@ const Routeur = () => {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home pokemons={pokemons} />}></Route>
-          {/* <Route path="/details/:id" element={<Details />}></Route> */}
+          <Route path="/" element={<Home />}></Route>
           <Route path="*" element={<NoMatch />}></Route>
         </Routes>
       </Layout>
