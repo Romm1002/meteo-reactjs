@@ -3,7 +3,7 @@ import axios from "axios";
 
 const SearchForm = () => {
   const [city, setCity] = useState("");
-  const [unit, setUnit] = useState("metric"); // 'metric' for Celsius, 'imperial' for Fahrenheit
+  const [unit, setUnit] = useState("metric");
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -15,13 +15,12 @@ const SearchForm = () => {
 
         const response = await axios.get(apiUrl);
         setWeatherData(response.data);
-        setError(null); // Clear any previous errors
+        setError(null);
       } catch (error) {
-        console.error("Une erreur est survenue :", error);
         setError(
           "Une erreur est survenue lors de la récupération des données météorologiques."
         );
-        setWeatherData(null); // Clear weather data in case of error
+        setWeatherData(null);
       }
     };
 
@@ -39,19 +38,22 @@ const SearchForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          placeholder="Enter city"
-        />
+    <>
+      <form onSubmit={handleSubmit} className="formSearch">
+        <div className="searchBox">
+          <input
+            type="text"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            placeholder="Ville..."
+          />
+          <button type="submit">Rechercher</button>
+        </div>
+
         <select value={unit} onChange={handleUnitChange}>
           <option value="metric">Celsius</option>
           <option value="imperial">Fahrenheit</option>
         </select>
-        <button type="submit">Search</button>
       </form>
 
       {error ? (
@@ -59,16 +61,16 @@ const SearchForm = () => {
       ) : (
         weatherData && (
           <div>
-            <h2>Weather in {weatherData.name}</h2>
+            <h2>Météo de {weatherData.name}</h2>
             <p>
-              Temperature: {weatherData.main.temp}°
+              Température: {weatherData.main.temp}°
               {unit === "metric" ? "C" : "F"}
             </p>
             <p>Description: {weatherData.weather[0].description}</p>
           </div>
         )
       )}
-    </div>
+    </>
   );
 };
 
