@@ -5,7 +5,7 @@ const Home = () => {
     return ( 
         <>
             <SearchForm/>
-            <WeatherDisplay/>
+            <WeatherDisplay />
         </>
      );
 }
