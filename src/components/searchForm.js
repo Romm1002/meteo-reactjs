@@ -40,27 +40,31 @@ const SearchForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="formSearch">
-        <div className="searchBox">
-          <input
-            type="text"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            placeholder="Ville..."
-          />
-          <button type="submit">Rechercher</button>
-        </div>
+      <nav>
+        <div className="container">
+          <form onSubmit={handleSubmit} className="formSearch">
+            <div className="searchBox">
+              <input
+                type="text"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                placeholder="Ville..."
+              />
+              <button type="submit">Rechercher</button>
+            </div>
 
-        <select value={unit} onChange={handleUnitChange}>
-          <option value="metric">Celsius</option>
-          <option value="imperial">Fahrenheit</option>
-        </select>
-      </form>
+            <select value={unit} onChange={handleUnitChange}>
+              <option value="metric">Metric</option>
+              <option value="imperial">Imperial</option>
+            </select>
+          </form>
+        </div>
+      </nav>
 
       {error ? (
         <p className="error-message">{error}</p>
       ) : (
-        weatherData && <WeatherDisplay data={weatherData} unit={unit}/>
+        weatherData && <WeatherDisplay data={weatherData} unit={unit} />
       )}
     </>
   );
