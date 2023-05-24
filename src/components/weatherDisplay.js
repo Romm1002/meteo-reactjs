@@ -23,7 +23,8 @@ const WeatherDisplay = ({ data, unit }) => {
   var ss = new Date(0);
   ss.setUTCSeconds(data.sys.sunset);
 
-  var daytimePercent = ((d.getTime() - sr.getTime()) * 100) / (ss.getTime() - sr.getTime());
+  var daytimePercent =
+    ((d.getTime() - sr.getTime()) * 100) / (ss.getTime() - sr.getTime());
 
   return (
     <div className="weatherDisplay container">
@@ -47,11 +48,11 @@ const WeatherDisplay = ({ data, unit }) => {
           />
           <b>
             {data.main.temp}
-            {unit == "metric" ? "°C" : "°F"}
+            {unit === "metric" ? "°C" : "°F"}
           </b>
           <p>
             Température ressentie: {data.main.feels_like}
-            {unit == "metric" ? "°C" : "°F"},{" "}
+            {unit === "metric" ? "°C" : "°F"},{" "}
             {data.weather.map((data) => data.description)}
           </p>
         </div>
@@ -59,37 +60,45 @@ const WeatherDisplay = ({ data, unit }) => {
           <div className="row">
             <p className="col-6">
               Vent: {data.wind.speed}
-              {unit == "metric" ? "m/s" : "mph"}
+              {unit === "metric" ? "m/s" : "mph"}
             </p>
             <p className="col-6">Pression: {data.main.pressure}hPa</p>
             <p className="col-6">Humidité: {data.main.humidity}%</p>
             <p className="col-6">Visibilité: {data.visibility / 1000}km</p>
             <p className="col-6">
               Température la plus basse: {data.main.temp_min}
-              {unit == "metric" ? "°C" : "°F"}
+              {unit === "metric" ? "°C" : "°F"}
             </p>
           </div>
         </div>
       </div>
       <div className="row mt-5">
         <div className="col-1 text-center">
-            <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="soleil"/>
-            <p>
+          <img
+            src="https://openweathermap.org/img/wn/01d@2x.png"
+            alt="soleil"
+          />
+          <p>
             {sr.getHours() +
-                "h" +
-                (sr.getMinutes() < 10 ? "0" + sr.getMinutes() : sr.getMinutes())}
-            </p>
+              "h" +
+              (sr.getMinutes() < 10 ? "0" + sr.getMinutes() : sr.getMinutes())}
+          </p>
         </div>
         <div className="col-10">
-                <input type="range" className="w-100" disabled value={daytimePercent}/>
+          <input
+            type="range"
+            className="w-100"
+            disabled
+            value={daytimePercent}
+          />
         </div>
         <div className="col-1 text-center">
-            <img src="https://openweathermap.org/img/wn/01n@2x.png" alt="lune"/>
-            <p>
+          <img src="https://openweathermap.org/img/wn/01n@2x.png" alt="lune" />
+          <p>
             {ss.getHours() +
-                "h" +
-                (ss.getMinutes() < 10 ? "0" + ss.getMinutes() : ss.getMinutes())}
-            </p>
+              "h" +
+              (ss.getMinutes() < 10 ? "0" + ss.getMinutes() : ss.getMinutes())}
+          </p>
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
-*{
+* {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
-footer{
+footer {
   text-align: center;
   padding: 2em;
   margin-top: 2em;
@@ -21,63 +21,63 @@ nav .container {
   margin: 0 auto;
 }
 
-.formSearch{
+.formSearch {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.formSearch .searchBox{
+.formSearch .searchBox {
   display: flex;
 }
-.formSearch .searchBox input{
+.formSearch .searchBox input {
   border: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   padding: 8px 15px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   outline: none;
 }
-.formSearch .searchBox button{
+.formSearch .searchBox button {
   background-color: #48484a;
   border: none;
   outline: none;
   color: #fff;
   padding: 8px 20px;
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 0.9rem;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
 }
-.formSearch .searchBox button:hover{
+.formSearch .searchBox button:hover {
   background-color: #636365;
 }
 
-.formSearch select{
-    /* remove arrow */
-    -webkit-appearance: none;
-    /* add some padding for image */
-    padding-right: 15px; 
-    /* apply SVG with arrow */
-    /* change width value to move arrow to the left */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 15 15"><path d="M 8,5.5 11,9.5 14,5.5 z"></path></svg>');
-    background-repeat: no-repeat;
-    background-position: 82% 50%;
-    padding: 0 15px;
-    background-color: #48484a;
-    color: #fff;
-    border-radius: 5px;
-    outline: none;
-    font-weight: 600;
-    font-size: .9rem;
+.formSearch select {
+  /* remove arrow */
+  -webkit-appearance: none;
+  /* add some padding for image */
+  padding-right: 15px;
+  /* apply SVG with arrow */
+  /* change width value to move arrow to the left */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 15 15"><path d="M 8,5.5 11,9.5 14,5.5 z"></path></svg>');
+  background-repeat: no-repeat;
+  background-position: 82% 50%;
+  padding: 0 15px;
+  background-color: #48484a;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
-.weatherDisplay h1{
+.weatherDisplay h1 {
   margin-bottom: 0;
 }
-.weatherDisplay h2{
+.weatherDisplay h2 {
   margin-top: 0;
 }
-.weatherDisplay b{
+.weatherDisplay b {
   font-size: 2em;
 }
