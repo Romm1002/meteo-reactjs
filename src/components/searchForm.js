@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import WeatherDisplay from "../components/weatherDisplay";
 
 const SearchForm = () => {
   const [city, setCity] = useState("");
@@ -57,16 +58,7 @@ const SearchForm = () => {
       {error ? (
         <p className="error-message">{error}</p>
       ) : (
-        weatherData && (
-          <div>
-            <h2>Weather in {weatherData.name}</h2>
-            <p>
-              Temperature: {weatherData.main.temp}°
-              {unit === "metric" ? "C" : "F"}
-            </p>
-            <p>Description: {weatherData.weather[0].description}</p>
-          </div>
-        )
+        weatherData && <WeatherDisplay data={weatherData} unit={unit}/>
       )}
     </div>
   );
